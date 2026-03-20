@@ -1,2 +1,13 @@
-# gestor-gastos
-App de gestión de gastos en Android
+# Mi Gestor de Gastos
+
+Aplicación Android para gestionar gastos personales.
+
+## Funcionalidades
+- Crear, editar y eliminar gastos
+- Categorías con iconos
+- Filtro y ordenación
+- Estadísticas
+
+## Tecnologías
+- Java
+- SQLite
