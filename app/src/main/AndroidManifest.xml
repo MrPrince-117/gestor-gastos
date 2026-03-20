@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MigestorDeGastos">
+
+        <!-- Pantalla inicial -->
+        <activity
+            android:name=".activities.BienvenidaActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.LoginActivity"/>
+        <activity android:name=".activities.RegistroActivity"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".activities.FormularioGastoActivity"/>
+        <activity android:name=".activities.DetalleGastoActivity"/>
+        <activity android:name=".activities.CategoriasActivity"/>
+        <activity android:name=".activities.EstadisticasActivity"/>
+        <activity android:name=".activities.SeleccionarIconoActivity"/>
+
+<!--        <activity-->
+<!--            android:name=".activities.LoginActivity">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        -->
+<!--        &lt;!&ndash; Registro de usuario &ndash;&gt;-->
+<!--        <activity android:name=".activities.RegisterActivity" />-->
+
+<!--        &lt;!&ndash; Pantalla principal (lista de gastos) &ndash;&gt;-->
+<!--        <activity android:name=".activities.MainActivity" />-->
+
+<!--        &lt;!&ndash; Ver detalle de un gasto &ndash;&gt;-->
+<!--        <activity android:name=".activities.DetalleGastoActivity" />-->
+
+<!--        &lt;!&ndash; Crear o editar gasto &ndash;&gt;-->
+<!--        <activity android:name=".activities.FormularioGastoActivity" />-->
+
+<!--        &lt;!&ndash; Gestión de categorías &ndash;&gt;-->
+<!--        <activity android:name=".activities.CategoriasActivity" />-->
+
+<!--        &lt;!&ndash; Estadísticas &ndash;&gt;-->
+<!--        <activity android:name=".activities.EstadisticasActivity" />-->
+
+<!--        &lt;!&ndash; Selección de iconos &ndash;&gt;-->
+<!--        <activity android:name=".activities.SeleccionarIconoActivity" />-->
+    </application>
+
+</manifest>
