@@ -11,3 +11,7 @@ Aplicación Android para gestionar gastos personales.
 ## Tecnologías
 - Java
 - SQLite
+
+
+## Descargar aplicación
+Puedes descargar el APK  para probar la app directamente.
