@@ -40,6 +40,7 @@ public class RegistroActivity extends AppCompatActivity {
         String password = etPassword.getText().toString();
         String confirmar = etConfirmarPassword.getText().toString();
 
+        // paravalidar que los campos no esten vacios
         if(usuario.isEmpty() || password.isEmpty() || confirmar.isEmpty()){
             Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
             return;
@@ -52,11 +53,14 @@ public class RegistroActivity extends AppCompatActivity {
 
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
+        //lo inserta en la bd
         ContentValues values = new ContentValues();
         values.put("nombre_usuario", usuario);
         values.put("contrasena", password);
 
+        //obtengo el id del usuario
         long resultado = db.insert("usuarios", null, values);
+
 
         if(resultado != -1){
             Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show();

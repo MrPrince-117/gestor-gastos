@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         btnOrdenFecha = findViewById(R.id.btnOrdenFecha);
         btnOrdenCantidad = findViewById(R.id.btnOrdenCantidad);
 
+
         databaseHelper = new DatabaseHelper(this);
 
         // Cargar datos iniciales
@@ -92,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
             Gasto gasto = listaGastos.get(position);
 
+
             Intent intent = new Intent(this, DetalleGastoActivity.class);
             intent.putExtra("id", gasto.getId());
             intent.putExtra("concepto", gasto.getConcepto());
@@ -108,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                //obtiene el id de la categoria seleccionada
                 if(position == 0){
                     cargarGastos();
                 }else{

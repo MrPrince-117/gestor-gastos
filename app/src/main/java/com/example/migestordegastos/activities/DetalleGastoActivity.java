@@ -80,11 +80,14 @@ public class DetalleGastoActivity extends AppCompatActivity {
         );
 
         if(cursor.moveToFirst()){
+            //obtENEMOS el nombre Y ICONPN de la categoria
             String nombre = cursor.getString(0);
             String icono = cursor.getString(1);
 
+            //mostramos el nombre de la categoria
             tvCategoriaDetalle.setText("Categoría: " + nombre);
 
+            //obtenemos el id del iconoº
             int iconoId = getResources().getIdentifier(
                     icono,
                     "drawable",
@@ -104,14 +107,17 @@ public class DetalleGastoActivity extends AppCompatActivity {
     // =========================
     private void editarGasto(){
 
+        //permite editar el gasto desde el detalle
         Intent intent = new Intent(this, FormularioGastoActivity.class);
 
+        //enviamos los datos del gasto
         intent.putExtra("modo", "editar");
         intent.putExtra("id", idGasto);
         intent.putExtra("concepto", tvConceptoDetalle.getText().toString());
         intent.putExtra("cantidad", tvCantidadDetalle.getText().toString().replace(" €",""));
         intent.putExtra("fecha", tvFechaDetalle.getText().toString().replace("Fecha: ",""));
         intent.putExtra("descripcion", tvDescripcionDetalle.getText().toString());
+
 
         startActivity(intent);
     }
@@ -121,8 +127,10 @@ public class DetalleGastoActivity extends AppCompatActivity {
     // =========================
     private void eliminarGasto(){
 
+        //permite eliminar el gasto desde el detalle usando el id del gasto
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
+        //elimina el gasto de la bd
         int resultado = db.delete("gastos", "id=?", new String[]{String.valueOf(idGasto)});
 
         if(resultado > 0){

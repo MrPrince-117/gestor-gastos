@@ -43,25 +43,30 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    // Método para iniciar sesión
     private void loginUsuario(){
 
         String usuario = etUsuario.getText().toString();
         String password = etPassword.getText().toString();
 
+        //Valida que los campos no esten vacios
         if(usuario.isEmpty() || password.isEmpty()){
             Toast.makeText(this, "Introduce usuario y contraseña", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        //Consulta en la base de datos si el usuario y contraseña son correctos
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
 
         String query = "SELECT * FROM usuarios WHERE nombre_usuario=? AND contrasena=?";
         Cursor cursor = db.rawQuery(query, new String[]{usuario, password});
 
+        //si tiene datos sera correcto
         if(cursor.moveToFirst()){
 
             Toast.makeText(this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show();
 
+            //obtiene el id del usuario
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
 

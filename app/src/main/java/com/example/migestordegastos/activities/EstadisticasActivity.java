@@ -78,9 +78,12 @@ public class EstadisticasActivity extends AppCompatActivity {
                 null
         );
 
+        cursor.close();
         StringBuilder resultado = new StringBuilder();
 
+
         if(cursor.moveToFirst()){
+            //mostramos el primer elemento
             do{
                 resultado.append("• ")
                         .append(cursor.getString(0))
@@ -92,6 +95,7 @@ public class EstadisticasActivity extends AppCompatActivity {
 
         cursor.close();
 
+        //si no hay gastos por categoria, mostramos un mensaje
         tvGastosPorCategoria.setText(resultado.toString());
     }
 }
